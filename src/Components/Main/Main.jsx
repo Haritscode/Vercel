@@ -39,22 +39,17 @@ export default function Main() {
   ]
   return (
     <div className='flex flex-col'>
-      <div className='relative w-2/3 md:w-3/4 flex justify-center h-screen items-center ml-4 2xl:ml-0'>
-      <div className='flex flex-col items-start gap-5'>
-        <h2 className='font-Libre font-semibold text-white md:text-6xl text-5xl'>Cari Cari</h2>
-        <p className='font-Nunito text-white md:text-3xl text-2xl font-normal md:w-3/4 leading-8'>Live from their sofa to yours. Get closer to your favorite artists,and never miss out.</p>
+      <div className='relative w-3/4 md:w-3/4 flex justify-center h-screen items-center ml-10  2xl:ml-0'>
+        <div className='flex flex-col items-start gap-5'>
+          <h2 className='font-Libre font-semibold text-white md:text-6xl text-5xl'>Cari Cari</h2>
+          <p className='font-Nunito text-white md:text-3xl text-2xl font-normal md:w-3/4 leading-8'>Live from their sofa to yours. Get closer to your favorite artists,and never miss out.</p>
+        </div>
       </div>
-    </div>
-    <div className='grid md:grid-cols-2  xl:grid-cols-4 bg-transparent -mt-96 items-center'>
-      {Circularbardata.map(({color,imgUrl,count,label,btn})=><div key={uuidv4()}><Circularbars Color={color} ImgUrl={imgUrl} Count={count} Label={label} Btn={btn}/></div>)}
-    </div>
-    <div className='-mt-24'>
+        <div className='grid md:grid-cols-2  xl:grid-cols-4  items-center md:-mt-20 -mt-20 bg-bgImage w-screen h-fit px-12'>
+          {Circularbardata.map(({color,imgUrl,count,label,btn})=><div key={uuidv4()}><Circularbars Color={color} ImgUrl={imgUrl} Count={count} Label={label} Btn={btn}/></div>)}
+      </div>
       <Shows/>
-    </div>
-    <div className='col-4 justify-evenly pt-28 bg-black h-screen'>
       <Reviews/>
     </div>
-</div>
-
   )
 }

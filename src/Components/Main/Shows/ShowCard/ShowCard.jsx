@@ -2,24 +2,28 @@ import React, { useState } from 'react'
 import {HiOutlineArrowSmRight} from 'react-icons/hi'
 import {MdOutlineBookmarks} from 'react-icons/md'
 
-export default function ShowCard({imgUrl,from,Name}) {
-    const [booked, setbooked] = useState(false);
-    const [bookmarkclr,setbookmarkclr]=useState("white");
+export default function ShowCard({imgUrl,from,Name,Id}) {
+    const ispresent=localStorage.getItem(Id);
+    console.log(ispresent);
+    const [booked, setbooked] = useState(ispresent?true:false);
+    const [bookmarkclr,setbookmarkclr]=useState(ispresent?'purple':'white');
     const bookmarkHandler=()=>{
         if(booked)
         {
             setbooked(false);
             setbookmarkclr('white');
+            localStorage.removeItem(Id);
         }
         else
         {
             setbooked(true);
             setbookmarkclr('purple')
+            localStorage.setItem(Id,true)
         }
     }
   return (
     <>
-    <div className='bg-darkpurple w-fit rounded-lg h-full'>
+    <div className='bg-darkpurple rounded-lg h-full'>
         <div className='flex flex-col gap-5 bg-showsbg relative right-3 top-2 rounded-lg pb-7'>
             <div>
                 <img src={imgUrl} alt="none" className=' rounded-lg w-full h-56'/>

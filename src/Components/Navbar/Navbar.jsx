@@ -18,7 +18,7 @@ export default function Navbar() {
     }
   return (
     <>
-        <div className='flex justify-between px-8 py-4 sm:px-12 sm:py-8 md:px-24 2xl:px-32 bg-transparent'>
+        <div className='px-3 md:px-24 lg:px-48  flex justify-between bg-transparent'>
             <img src="./Navbar/image 52.svg" alt="none" className='h-16' />
             <div className='flex items-center scale-105'>
                 <ol className='flex gap-2 md:gap-10 text-white text-xl font-normal items-center'>

@@ -120,20 +120,22 @@ export default function Reviews() {
     }
   return (
     <>
-    <div className='flex justify-between px-24 h-fit'>
-        <h1 className='text-white font-Libre text-4xl font-normal'><span className="underline underline-offset-4 decoration-blue-800">Re</span>views</h1>
-        <div className='flex items-center gap-5'>
-            <span className='text-white'>{reviescount}/{totolreviews}</span>
-            <div className='flex'>
-                <button disabled={reviescount>1?false:true} onClick={reviewsLeftBtnHandler}>{<BiLeftArrowAlt color='white' size={30}/>}</button>
-                <button disabled={reviescount<totolreviews?false:true} onClick={reviewsRightBtnHandler}>{<BiRightArrowAlt color='white'size={30}/>}</button>
+    <div className='bg-black relative -top-36 pt-24'>
+        <div className='flex justify-between px-24 bg-black'>
+            <h1 className='text-white font-Libre text-4xl font-normal'><span className="underline underline-offset-4 decoration-blue-800">Re</span>views</h1>
+            <div className='flex items-center gap-5'>
+                <span className='text-white'>{reviescount}/{totolreviews}</span>
+                <div className='flex'>
+                    <button disabled={reviescount>1?false:true} onClick={reviewsLeftBtnHandler}>{<BiLeftArrowAlt color='white' size={30}/>}</button>
+                    <button disabled={reviescount<totolreviews?false:true} onClick={reviewsRightBtnHandler}>{<BiRightArrowAlt color='white'size={30}/>}</button>
+                </div>
             </div>
         </div>
-    </div>
-    <div className='grid md:grid-cols-3 gap-36 mt-24 px-8 pb-24'>
-        {Reviewdata.slice(start,to).map(({imgUrl,Name,flag,review})=><div key={uuidv4()}>
-            <ReviewsCard Imgurl={imgUrl} Name={Name} Flag={flag} Review={review}/>
-        </div>)}
+        <div className='grid lg:grid-cols-3 gap-36 mt-24 px-8 pb-24'>
+            {Reviewdata.slice(start,to).map(({imgUrl,Name,flag,review})=><div key={uuidv4()}>
+                <ReviewsCard Imgurl={imgUrl} Name={Name} Flag={flag} Review={review}/>
+            </div>)}
+        </div>
     </div>
 </>
   )

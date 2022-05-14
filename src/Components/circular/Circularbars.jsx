@@ -23,8 +23,8 @@ export default function Circularbars({Color,ImgUrl,Count,Label,Btn}) {
   }
   return (
     <>
-    <div className='flex flex-col relative scale-50 h-fi'>
-      <div className='w-full'>
+    <div className='flex flex-col relative md:scale-50 md:-top-80 -top-40 scale-75'>
+      <div className='w-full relative'>
       <CircularProgressbar
           value={percentage}
           strokeWidth={1}
@@ -32,8 +32,7 @@ export default function Circularbars({Color,ImgUrl,Count,Label,Btn}) {
             strokeLinecap: "butt",pathColor:`${Color}`,trailColor:"gray"
           })}
         />
-      </div>
-      <div className='relative bottom-80'>
+      <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
         <div className='flex flex-col items-center gap-4'>
           <button disabled={Btn} onClick={likeBtnHandler}><img src={ImgUrl} alt="none" className='w-0.6'/></button>
           <div className='text-3xl font-Libre text-white'>{count}</div>
@@ -41,6 +40,7 @@ export default function Circularbars({Color,ImgUrl,Count,Label,Btn}) {
           text-3xl font-bold text-gray-300'>{Label}</div>
         </div>
 
+      </div>
       </div>
     </div>
     </>
